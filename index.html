@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reivan Adhitya Maulana | Software Engineering & Web Developer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="fotoreivan.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#0a0a0c',
+            brandCard: '#121217',
+            brandCardHover: '#181820',
+            brandRed: '#ef4444',
+            brandRedDark: '#dc2626',
+            brandRedDeep: '#991b1b',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+  class="bg-[#0a0a0c] text-gray-100 font-['Poppins'] antialiased min-h-screen relative selection:bg-red-600 selection:text-white">
+
+  <!-- BACKGROUND AMBIENT GLOWS -->
+  <div class="fixed inset-0 pointer-events-none z-0">
+    <div class="absolute inset-0 bg-hero-gradient"></div>
+    <div class="absolute inset-0 bg-radial-glow"></div>
+    <div class="absolute inset-0 bg-radial-bottom"></div>
+  </div>
+
+  <!-- =================================================== -->
+  <!-- 1. NAVBAR (HEADER STICKY & INTERAKTIF) -->
+  <!-- =================================================== -->
+  <header id="mainNavbar"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3 px-6 sm:px-10 lg:px-16 flex justify-between items-center backdrop-blur-md bg-[#0a0a0c]/85 border-b border-zinc-800/60">
+
+    <!-- Logo di kiri: "Portfolio." dengan titik merah -->
+    <a href="#home"
+      class="group flex items-center space-x-1 text-xl font-extrabold tracking-tight text-white focus:outline-none">
+      <span>Portfolio</span><span
+        class="text-red-600 text-2xl leading-none inline-block group-hover:scale-125 transition-transform duration-300">.</span>
+    </a>
+
+    <!-- Desktop Navigation Menu -->
+    <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm font-medium text-gray-300">
+      <a href="#home" class="nav-link active hover:text-red-500 transition duration-200">Home</a>
+      <a href="#about" class="nav-link hover:text-red-500 transition duration-200">About</a>
+      <a href="#services" class="nav-link hover:text-red-500 transition duration-200">Services</a>
+      <a href="#portfolio" class="nav-link hover:text-red-500 transition duration-200">Portfolio</a>
+      <a href="#contact" class="nav-link hover:text-red-500 transition duration-200">Contact</a>
+    </nav>
+
+    <!-- Header Action Button (Desktop) -->
+    <div class="hidden md:flex items-center space-x-4">
+      <a href="#contact"
+        class="px-5 py-2.5 bg-red-600/10 hover:bg-red-600 text-red-500 hover:text-white border border-red-600/40 hover:border-red-600 rounded-lg text-sm font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(239,68,68,0.15)] flex items-center gap-2">
+        <span>Hubungi Saya</span>
+        <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Hamburger Button -->
+    <button id="mobileMenuBtn" aria-label="Toggle Menu"
+      class="md:hidden w-11 h-11 flex items-center justify-center rounded-lg bg-zinc-900 border border-zinc-800 text-gray-300 hover:text-red-500 hover:border-red-600/50 transition focus:outline-none">
+      <i id="hamburgerIcon" class="fa-solid fa-bars text-xl"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Navigation Drawer / Dropdown -->
+  <div id="mobileMenu"
+    class="fixed inset-x-0 top-[73px] bg-[#0a0a0c]/98 backdrop-blur-xl border-b border-zinc-800 z-40 px-6 py-6 transition-all duration-300 transform -translate-y-[150%] opacity-0 pointer-events-none md:hidden shadow-2xl">
+    <div class="flex flex-col space-y-4">
+      <a href="#home"
+        class="mobile-nav-link text-lg font-medium text-gray-300 hover:text-red-500 py-2 border-b border-zinc-800/40 flex items-center justify-between">
+        <span>Home</span>
+        <i class="fa-solid fa-house text-sm text-zinc-500"></i>
+      </a>
+      <a href="#about"
+        class="mobile-nav-link text-lg font-medium text-gray-300 hover:text-red-500 py-2 border-b border-zinc-800/40 flex items-center justify-between">
+        <span>About</span>
+        <i class="fa-solid fa-user text-sm text-zinc-500"></i>
+      </a>
+      <a href="#services"
+        class="mobile-nav-link text-lg font-medium text-gray-300 hover:text-red-500 py-2 border-b border-zinc-800/40 flex items-center justify-between">
+        <span>Services & Skills</span>
+        <i class="fa-solid fa-laptop-code text-sm text-zinc-500"></i>
+      </a>
+      <a href="#portfolio"
+        class="mobile-nav-link text-lg font-medium text-gray-300 hover:text-red-500 py-2 border-b border-zinc-800/40 flex items-center justify-between">
+        <span>Portfolio</span>
+        <i class="fa-solid fa-folder-open text-sm text-zinc-500"></i>
+      </a>
+      <a href="#contact"
+        class="mobile-nav-link text-lg font-medium text-gray-300 hover:text-red-500 py-2 border-b border-zinc-800/40 flex items-center justify-between">
+        <span>Contact</span>
+        <i class="fa-solid fa-envelope text-sm text-zinc-500"></i>
+      </a>
+      <div class="pt-2">
+        <button onclick="openCvModal()"
+          class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-200 shadow-lg flex items-center justify-center gap-2">
+          <i class="fas fa-eye"></i>
+          <span>Lihat CV</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================== -->
+  <!-- 2. SECTION 1: HOME (HERO SECTION) -->
+  <!-- =================================================== -->
+  <section id="home"
+    class="min-h-screen flex items-center justify-center pt-20 pb-10 px-6 sm:px-10 lg:px-16 relative z-10">
+    <div class="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+
+      <!-- TEKS KIRI (7 Kolom) -->
+      <div class="lg:col-span-7 space-y-4 text-left pr-0 lg:pr-4">
+
+        <!-- Status Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/40 border border-red-600/30 text-red-400 text-xs sm:text-sm font-medium tracking-wide">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+          <span>Siswa RPL SMKN 20 Jakarta • Ready for Opportunities</span>
+        </div>
+
+        <h3 class="text-base sm:text-lg font-semibold text-white tracking-wide">
+          Hello, <span class="text-red-600 font-bold">I am</span>
+        </h3>
+
+        <!-- NAMA + GARIS MERAH AKSEN VERTIKAL -->
+        <div class="flex items-center space-x-3">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+            Reivan Adhitya
+          </h1>
+          <div
+            class="w-2 h-10 sm:h-14 lg:h-16 bg-red-600 rounded-full inline-block shadow-[0_0_14px_rgba(239,68,68,0.7)]">
+          </div>
+        </div>
+
+        <!-- TITLE JABATAN -->
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-red-600 tracking-wide">
+          Software Engineering & Web Developer
+        </h2>
+
+        <!-- DESKRIPSI SINGKAT -->
+        <p class="text-gray-300 text-sm sm:text-base max-w-xl leading-relaxed font-normal">
+          Saya seorang siswa SMK jurusan <span class="text-white font-medium">Rekayasa Perangkat Lunak (RPL)</span> yang
+          antusias di bidang web development. Memiliki keahlian dalam membangun aplikasi web modern yang responsif,
+          bersih, dan berorientasi pada pengalaman pengguna.
+        </p>
+
+        <!-- SOSIAL MEDIA -->
+        <div class="flex flex-wrap items-center gap-3 pt-3">
+          <span class="text-xs uppercase tracking-wider text-gray-400 mr-2 font-medium">Connect:</span>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/6288905778253" target="_blank" rel="noopener noreferrer" title="WhatsApp Reivan"
+            class="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center text-base hover:bg-red-600 hover:text-white hover:scale-110 transition duration-300 shadow-md">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/reiivonnnn?psln=NmlnMm90bXJ3bjlk" target="_blank" rel="noopener noreferrer"
+            title="Instagram Reivan"
+            class="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center text-base hover:bg-red-600 hover:text-white hover:scale-110 transition duration-300 shadow-md">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/reieieii" target="_blank" rel="noopener noreferrer" title="GitHub Reivan"
+            class="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center text-base hover:bg-red-600 hover:text-white hover:scale-110 transition duration-300 shadow-md">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/reivan-adhitya-maulana-216b883a7?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+            target="_blank" rel="noopener noreferrer" title="LinkedIn Reivan"
+            class="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center text-base hover:bg-red-600 hover:text-white hover:scale-110 transition duration-300 shadow-md">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+
+        <!-- TOMBOL AKSI -->
+        <div class="flex flex-wrap gap-4 pt-4">
+          <button onclick="openCvModal()"
+            class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white text-sm font-bold rounded-lg shadow-[0_0_20px_rgba(239,68,68,0.35)] hover:shadow-[0_0_28px_rgba(239,68,68,0.5)] hover:-translate-y-0.5 transition duration-300 flex items-center gap-2">
+            <i class="fas fa-eye"></i>
+            <span>Lihat CV</span>
+          </button>
+
+          <a href="#contact"
+            class="px-6 py-3 border-2 border-red-900/70 hover:border-red-600 bg-red-950/20 hover:bg-red-600/10 text-red-400 hover:text-white font-bold text-sm rounded-lg transition duration-300 flex items-center gap-2">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Contact Me</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- FOTO KANAN (5 Kolom - BINGKAI LINGKARAN DENGAN BORDER MERAH & EFEK PADA ELEGAN) -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="relative group">
+
+          <!-- Outer Ambient Glow Rings -->
+          <div
+            class="absolute -inset-2 rounded-full bg-gradient-to-tr from-red-600/30 to-red-900/10 blur-xl opacity-75 group-hover:opacity-100 transition duration-700">
+          </div>
+
+          <!-- Foto Profil Lingkaran -->
+          <div
+            class="w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] lg:w-[340px] lg:h-[340px] rounded-full overflow-hidden border-4 border-red-600 shadow-[0_0_40px_rgba(239,68,68,0.35)] flex items-center justify-center bg-zinc-950 relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+            <img src="fotoreivan.jpg" alt="Foto Reivan Adhitya Maulana"
+              class="w-full h-full object-cover object-top filter brightness-105 contrast-105">
+          </div>
+
+          <!-- Floating Info Pill: SMKN 20 Jakarta RPL -->
+          <div
+            class="absolute -bottom-3 sm:bottom-4 -left-4 sm:-left-6 z-20 glass-card px-4 py-2.5 rounded-xl border border-red-600/40 shadow-xl flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-lg bg-red-600/20 border border-red-500/50 flex items-center justify-center text-red-500">
+              <i class="fa-solid fa-laptop-code text-lg"></i>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 font-medium">Spesialisasi</p>
+              <p class="text-sm font-bold text-white">RPL • Web Dev</p>
+            </div>
+          </div>
+
+          <!-- Floating Info Pill: Magang & Pengalaman -->
+          <div
+            class="absolute top-4 -right-3 sm:-right-4 z-20 glass-card px-3.5 py-2 rounded-xl border border-zinc-700/60 shadow-xl flex items-center gap-2.5">
+            <div
+              class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-xs">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div>
+              <p class="text-[11px] text-gray-400">Pengalaman</p>
+              <p class="text-xs font-bold text-white">Intern PT PSG</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================================================== -->
+  <!-- 3. SECTION 2: ABOUT (TENTANG SAYA & PENDIDIKAN) -->
+  <!-- =================================================== -->
+  <section id="about" class="py-16 px-6 sm:px-10 lg:px-16 relative z-10 border-t border-zinc-800/60">
+    <div class="max-w-6xl mx-auto space-y-10">
+
+      <!-- Section Title Header -->
+      <div class="text-center space-y-3">
+        <div
+          class="inline-flex items-center px-3.5 py-1 rounded-full bg-red-950/40 border border-red-600/30 text-red-400 text-xs font-semibold tracking-wider uppercase">
+          <span>Tentang Saya & Pendidikan</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+          Profil & <span class="text-red-600">Riwayat Belajar</span>
+        </h2>
+        <div class="w-20 h-1.5 bg-red-600 rounded-full mx-auto mt-2"></div>
+      </div>
+
+      <!-- Ringkasan Profil Card / Quote -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border-l-4 border-l-red-600 space-y-3">
+        <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight">Visi & Karakter Diri</h3>
+        <p class="text-gray-300 text-sm sm:text-base italic leading-relaxed">
+          "Saya ingin menjadi seorang programmer yang percaya diri, antusias, dan kreatif. Saya ingin memperoleh
+          lebih banyak pengalaman di bidang media digital serta menciptakan situs web dan aplikasi saya sendiri."
+        </p>
+        <div class="pt-2 flex flex-wrap gap-x-8 gap-y-2 text-sm text-gray-400 border-t border-zinc-800/80 pt-4">
+          <div><strong class="text-gray-200">Nama Lengkap:</strong> Reivan Adhitya Maulana</div>
+          <div><strong class="text-gray-200">Fokus:</strong> Software Engineering & Web Development</div>
+          <div><strong class="text-gray-200">Status:</strong> Pelajar SMKN 20 Jakarta (RPL)</div>
+          <div><strong class="text-gray-200">Domisili:</strong> Jakarta Selatan, Indonesia</div>
+        </div>
+      </div>
+
+      <!-- Timeline Pendidikan -->
+      <div class="space-y-8">
+        <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Jejak Pendidikan Formal</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Pendidikan 1: SDN Ragunan 07 Pagi -->
+          <div
+            class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-red-600/60 transition-all duration-300">
+            
+            <!-- Card Header Image / School Photo -->
+            <div class="relative h-40 sm:h-44 overflow-hidden border-b border-zinc-800 p-5 flex flex-col justify-between">
+              <img src="img/sdn-ragunan.jpg" alt="SDN Ragunan 07 Pagi"
+                class="absolute inset-0 w-full h-full object-cover object-center opacity-70 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500 pointer-events-none" />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/85 via-zinc-950/40 to-zinc-950/20 pointer-events-none"></div>
+
+              <!-- Badges -->
+              <div class="flex justify-between items-center relative z-10">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-zinc-950/80 text-gray-200 border border-zinc-700/80 backdrop-blur-md shadow-sm">
+                  2015 - 2021
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-red-600/90 text-white shadow-sm">
+                  Alumni
+                </span>
+              </div>
+
+              <!-- School Title inside Header -->
+              <div class="relative z-10 space-y-0.5">
+                <h4 class="text-lg sm:text-xl font-black text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                  SDN Ragunan 07 Pagi
+                </h4>
+                <p class="text-xs text-red-400 font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+                  Pendidikan Dasar
+                </p>
+              </div>
+            </div>
+
+            <!-- Card Body Content -->
+            <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between space-y-4">
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Menyelesaikan pendidikan dasar 6 tahun dengan fondasi logika dan kedisiplinan belajar yang kuat, serta
+                pengenalan awal terhadap teknologi komputer.
+              </p>
+
+              <div class="pt-4 border-t border-zinc-800/80 text-xs text-gray-400 flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-red-500"></i>
+                <span>Ragunan, Jakarta Selatan</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Pendidikan 2: SMPN 56 Jakarta -->
+          <div
+            class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-red-600/60 transition-all duration-300">
+            
+            <!-- Card Header Image / School Photo -->
+            <div class="relative h-40 sm:h-44 overflow-hidden border-b border-zinc-800 p-5 flex flex-col justify-between">
+              <img src="img/smpn56.jpg" alt="SMPN 56 Jakarta"
+                class="absolute inset-0 w-full h-full object-cover object-center opacity-70 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500 pointer-events-none" />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/85 via-zinc-950/40 to-zinc-950/20 pointer-events-none"></div>
+
+              <!-- Badges -->
+              <div class="flex justify-between items-center relative z-10">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-zinc-950/80 text-gray-200 border border-zinc-700/80 backdrop-blur-md shadow-sm">
+                  2021 - 2024
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-red-600/90 text-white shadow-sm">
+                  Alumni
+                </span>
+              </div>
+
+              <!-- School Title inside Header -->
+              <div class="relative z-10 space-y-0.5">
+                <h4 class="text-lg sm:text-xl font-black text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                  SMPN 56 Jakarta
+                </h4>
+                <p class="text-xs text-red-400 font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+                  Sekolah Menengah Pertama
+                </p>
+              </div>
+            </div>
+
+            <!-- Card Body Content -->
+            <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between space-y-4">
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Membangun minat mendalam pada multimedia, logika komputasi, dan kepemimpinan dalam kegiatan sekolah
+                hingga lulus dengan prestasi baik.
+              </p>
+
+              <div class="pt-4 border-t border-zinc-800/80 text-xs text-gray-400 flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-red-500"></i>
+                <span>Cilandak, Jakarta Selatan</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Pendidikan 3: SMKN 20 Jakarta - RPL -->
+          <div
+            class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between border-red-600/40 shadow-[0_0_30px_rgba(239,68,68,0.15)] group hover:border-red-600 transition-all duration-300">
+            
+            <!-- Card Header Image / School Photo -->
+            <div class="relative h-40 sm:h-44 overflow-hidden border-b border-zinc-800 p-5 flex flex-col justify-between">
+              <img src="img/smkn20.jpg" alt="SMKN 20 Jakarta"
+                class="absolute inset-0 w-full h-full object-cover object-center opacity-70 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500 pointer-events-none" />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/85 via-zinc-950/40 to-zinc-950/20 pointer-events-none"></div>
+
+              <!-- Badges -->
+              <div class="flex justify-between items-center relative z-10">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-red-950/80 text-red-400 border border-red-600/50 backdrop-blur-md shadow-sm">
+                  2024 - 2027
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-red-600 text-white shadow-md animate-pulse">
+                  Sedang Berjalan
+                </span>
+              </div>
+
+              <!-- School Title inside Header -->
+              <div class="relative z-10 space-y-0.5">
+                <h4 class="text-lg sm:text-xl font-black text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                  SMKN 20 Jakarta
+                </h4>
+                <p class="text-xs text-red-400 font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+                  Rekayasa Perangkat Lunak (RPL)
+                </p>
+              </div>
+            </div>
+
+            <!-- Card Body Content -->
+            <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between space-y-4">
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Mempelajari rekayasa software terapan: Pemrograman Web (HTML, CSS, JS, PHP), Basis Data (MySQL), Desain
+                UI/UX, serta pembuatan aplikasi cross-platform.
+              </p>
+
+              <div class="pt-4 border-t border-zinc-800/80 text-xs text-gray-400 flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-red-500"></i>
+                <span>Cilandak Barat, Jakarta Selatan</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================================================== -->
+  <!-- 4. SECTION 3: SERVICES & KEMAHIRAN -->
+  <!-- =================================================== -->
+  <section id="services" class="py-16 px-6 sm:px-10 lg:px-16 relative z-10 border-t border-zinc-800/60 bg-zinc-950/40">
+    <div class="max-w-6xl mx-auto space-y-10">
+
+      <!-- Section Title Header -->
+      <div class="text-center space-y-3">
+        <div
+          class="inline-flex items-center px-3.5 py-1 rounded-full bg-red-950/40 border border-red-600/30 text-red-400 text-xs font-semibold tracking-wider uppercase">
+          <span>Keahlian & Layanan</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+          Services & <span class="text-red-600">Kemahiran</span>
+        </h2>
+        <div class="w-20 h-1.5 bg-red-600 rounded-full mx-auto mt-2"></div>
+        <p class="text-gray-400 max-w-2xl mx-auto text-base">
+          Layanan pengembangan digital dan kompetensi teknis yang saya kuasai melalui pendidikan formal RPL dan praktik
+          magang industri.
+        </p>
+      </div>
+
+      <!-- Services Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+        <!-- Card 1: Web Development -->
+        <div class="glass-card rounded-2xl p-6 space-y-4 group hover:border-red-600/50">
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition">
+              Web Development
+            </h3>
+            <span class="text-2xl font-black text-zinc-800 group-hover:text-red-900/40 transition flex-shrink-0">01</span>
+          </div>
+
+          <p class="text-gray-300 text-base leading-relaxed">
+            Membangun website modern, responsif, dan interaktif menggunakan standar kode bersih. Berfokus pada kecepatan
+            muat, struktur semantik yang baik, serta tampilan dinamis di ponsel dan desktop.
+          </p>
+
+          <!-- Skills tags -->
+          <div class="pt-2">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2.5">Spesialisasi Teknis:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">HTML5
+                Semantic</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">CSS3 &
+                Flexbox/Grid</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">Tailwind
+                CSS</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">Vanilla
+                JavaScript</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">Responsive
+                Layout</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Mengelola Web & Desain Web (CV PT PSG Experience) -->
+        <div class="glass-card rounded-2xl p-6 space-y-4 group hover:border-red-600/50">
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition">
+              Mengelola Web & Desain Web
+            </h3>
+            <span
+              class="text-2xl font-black text-zinc-800 group-hover:text-red-900/40 transition flex-shrink-0">02</span>
+          </div>
+
+          <p class="text-gray-300 text-base leading-relaxed">
+            Pengalaman nyata sebagai <strong class="text-white">Web Design & Web Developer saat magang di PT
+              PSG</strong> serta <strong class="text-white">Admin sosial media organisasi & PT PSG</strong>. Bertanggung
+            jawab atas estetika, pemeliharaan konten, dan manajemen akun digital.
+          </p>
+
+          <!-- Skills tags -->
+          <div class="pt-2">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2.5">Pengalaman & Peran:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-xs rounded-lg bg-red-950/60 text-red-300 border border-red-800/50">Intern PT
+                PSG</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">Web
+                Maintenance</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">Admin
+                Sosial Media</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">Content
+                Curation</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">UI/UX Web
+                Mockups</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Software & Database Architecture -->
+        <div class="glass-card rounded-2xl p-6 space-y-4 group hover:border-red-600/50">
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition">
+              Rekayasa Perangkat Lunak & Basis Data
+            </h3>
+            <span
+              class="text-2xl font-black text-zinc-800 group-hover:text-red-900/40 transition flex-shrink-0">03</span>
+          </div>
+
+          <p class="text-gray-300 text-base leading-relaxed">
+            Perancangan logika aplikasi berorientasi objek (OOP), pemodelan relasi basis data (ERD), dan implementasi
+            Query SQL untuk mendukung sistem aplikasi berbasis data yang terintegrasi aman.
+          </p>
+
+          <div class="pt-2">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2.5">Teknologi & Konsep:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">PHP &
+                OOP</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">MySQL
+                Database</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">CRUD
+                System</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">Git &
+                GitHub</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Multiplatform App Development -->
+        <div class="glass-card rounded-2xl p-6 space-y-4 group hover:border-red-600/50">
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="text-lg font-bold text-white group-hover:text-red-500 transition">
+              Aplikasi Lintas Platform (Android & Windows)
+            </h3>
+            <span
+              class="text-2xl font-black text-zinc-800 group-hover:text-red-900/40 transition flex-shrink-0">04</span>
+          </div>
+
+          <p class="text-gray-300 text-base leading-relaxed">
+            Pembuatan aplikasi modern yang fleksibel untuk perangkat seluler Android dan komputer Windows. Menjamin
+            konsistensi fungsionalitas, performa interaktif, dan kenyamanan interaksi user.
+          </p>
+
+          <div class="pt-2">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2.5">Lingkup Aplikasi:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">Android
+                Build</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">Windows
+                Desktop App</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">Local Data
+                Storage</span>
+              <span class="px-3 py-1 text-xs rounded-lg bg-zinc-800/90 text-gray-200 border border-zinc-700">UI
+                Interactivity</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tech Stack Badges Strip -->
+      <div class="pt-6">
+        <div class="glass-card rounded-2xl p-6 sm:p-8 text-center space-y-6">
+          <h4 class="text-lg font-bold text-white">Perangkat & Teknologi Yang Sering Digunakan</h4>
+          <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-gray-300">
+
+            <div
+              class="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-red-600/50 transition">
+              <i class="fa-brands fa-html5 text-orange-500 text-xl"></i>
+              <span class="text-sm font-semibold">HTML5</span>
+            </div>
+
+            <div
+              class="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-red-600/50 transition">
+              <i class="fa-brands fa-css3-alt text-blue-500 text-xl"></i>
+              <span class="text-sm font-semibold">CSS3</span>
+            </div>
+
+            <div
+              class="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-red-600/50 transition">
+              <i class="fa-brands fa-js text-yellow-400 text-xl"></i>
+              <span class="text-sm font-semibold">JavaScript</span>
+            </div>
+
+            <div
+              class="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-red-600/50 transition">
+              <i class="fa-solid fa-wind text-cyan-400 text-xl"></i>
+              <span class="text-sm font-semibold">Tailwind CSS</span>
+            </div>
+
+            <div
+              class="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-red-600/50 transition">
+              <i class="fa-brands fa-php text-indigo-400 text-xl"></i>
+              <span class="text-sm font-semibold">PHP</span>
+            </div>
+
+            <div
+              class="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-red-600/50 transition">
+              <i class="fa-solid fa-server text-emerald-400 text-xl"></i>
+              <span class="text-sm font-semibold">MySQL</span>
+            </div>
+
+            <div
+              class="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-red-600/50 transition">
+              <i class="fa-brands fa-git-alt text-red-500 text-xl"></i>
+              <span class="text-sm font-semibold">Git</span>
+            </div>
+
+            <div
+              class="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-red-600/50 transition">
+              <i class="fa-brands fa-windows text-blue-400 text-xl"></i>
+              <span class="text-sm font-semibold">Windows</span>
+            </div>
+
+            <div
+              class="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-red-600/50 transition">
+              <i class="fa-brands fa-android text-emerald-500 text-xl"></i>
+              <span class="text-sm font-semibold">Android</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================================================== -->
+  <!-- 5. SECTION 4: PORTFOLIO (PROYEK NYATA DARI CV) -->
+  <!-- =================================================== -->
+  <section id="portfolio" class="py-16 px-6 sm:px-10 lg:px-16 relative z-10 border-t border-zinc-800/60">
+    <div class="max-w-6xl mx-auto space-y-10">
+
+      <!-- Section Title Header -->
+      <div class="text-center space-y-3">
+        <div
+          class="inline-flex items-center px-3.5 py-1 rounded-full bg-red-950/40 border border-red-600/30 text-red-400 text-xs font-semibold tracking-wider uppercase">
+          <span>Proyek Nyata Dari CV</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+          Portofolio <span class="text-red-600">Unggulan</span>
+        </h2>
+        <div class="w-20 h-1.5 bg-red-600 rounded-full mx-auto mt-2"></div>
+        <p class="text-gray-400 max-w-2xl mx-auto text-base">
+          Proyek perangkat lunak pilihan yang telah saya kembangkan, mencerminkan kemampuan membangun sistem web modern
+          dan
+          aplikasi interaktif edukasi lintas platform.
+        </p>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+
+        <!-- PROYEK 1: Kantin Digital SMKN 20 Jakarta -->
+        <div
+          class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-red-600/60 transition-all duration-300">
+
+          <!-- Card Header Image (Murni Foto Home Tanpa Teks/Ikon Penghalang) -->
+          <div class="relative h-56 sm:h-64 overflow-hidden border-b border-zinc-800 bg-zinc-950">
+            <img src="img/kantin-bg.png" alt="Kantin Digital Preview"
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="p-6 sm:p-8 space-y-6 flex-grow flex flex-col justify-between">
+            <div class="space-y-4">
+              <!-- Category Badges -->
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-red-600/90 text-white shadow-sm">
+                  Proyek Sekolah / RPL
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-zinc-900 border border-zinc-700 text-gray-300">
+                  Web Application
+                </span>
+              </div>
+
+              <h3 class="text-2xl font-bold text-white group-hover:text-red-500 transition">
+                Kantin Digital SMKN 20 Jakarta
+              </h3>
+
+              <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                Solusi modern untuk kebutuhan Anda. Pesan makanan favorit dengan mudah, cepat, dan aman melalui platform
+                digital terpercaya.
+              </p>
+
+              <!-- Fitur Utama -->
+              <div class="space-y-2 pt-1">
+                <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Fitur Unggulan:</div>
+                <ul class="text-xs sm:text-sm text-gray-300 space-y-1.5 list-none">
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>50+ Menu Makanan Terverifikasi</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>8+ Stand Kuliner Sekolah</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>1000+ Transaksi Pelanggan Puas</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-red-400 font-medium">Laravel</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-red-400 font-medium">MySQL</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">Tailwind CSS</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">JavaScript</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">PHP</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pt-6 border-t border-zinc-800/80 flex flex-col gap-2">
+              <!-- Baris 1: Detail -->
+              <button onclick="openProjectModal('kantin')"
+                class="w-full py-3.5 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm rounded-xl transition duration-200 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(239,68,68,0.3)] hover:shadow-[0_0_28px_rgba(239,68,68,0.5)]">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Lihat Detail Lengkap</span>
+              </button>
+              <!-- Baris 2: GitHub + Kunjungi Website -->
+              <div class="flex gap-2">
+                <a href="https://github.com/reieieii/Kantin-Digital.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 py-3 px-3 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-xs rounded-xl transition duration-200 flex items-center justify-center gap-1.5 border border-zinc-700 hover:border-zinc-500">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Repositori GitHub</span>
+                </a>
+                <a href="https://kantin-digital-production-31b3.up.railway.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 py-3 px-3 bg-zinc-800 hover:bg-emerald-700 text-white font-semibold text-xs rounded-xl transition duration-200 flex items-center justify-center gap-1.5 border border-zinc-700 hover:border-emerald-500">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <span>Kunjungi Website</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROYEK 2: Aplikasi Language Learning -->
+        <div
+          class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-red-600/60 transition-all duration-300">
+
+          <!-- Card Header Image (Murni Foto Home Tanpa Teks/Ikon Penghalang) -->
+          <div class="relative h-56 sm:h-64 overflow-hidden border-b border-zinc-800 bg-zinc-950">
+            <img src="img/language-bg.png" alt="Language Learning App Preview"
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="p-6 sm:p-8 space-y-6 flex-grow flex flex-col justify-between">
+            <div class="space-y-4">
+              <!-- Category Badges -->
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-red-600/90 text-white shadow-sm">
+                  Cross-Platform App
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-zinc-900 border border-zinc-700 text-gray-300">
+                  Android & Windows
+                </span>
+              </div>
+
+              <h3 class="text-2xl font-bold text-white group-hover:text-red-500 transition">
+                Aplikasi Language Learning
+              </h3>
+
+              <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                Aplikasi pembelajaran bahasa yang didesain secara adaptif untuk dijalankan di dua sistem operasi
+                sekaligus: <strong class="text-white">Android dan Windows</strong>. Membantu pengguna mempelajari
+                kosakata dan percakapan melalui flashcards interaktif, kuis bertingkat, dan pelacakan progres.
+              </p>
+
+              <!-- Fitur Utama -->
+              <div class="space-y-2 pt-1">
+                <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Fitur Unggulan:</div>
+                <ul class="text-xs sm:text-sm text-gray-300 space-y-1.5 list-none">
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>Eksekusi lintas sistem operasi (Android & Windows)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>Kuis kosakata interaktif dengan skor langsung</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>Penyimpanan progres belajar lokal yang andal</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-red-400 font-medium">Cross-Platform</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-red-400 font-medium">JavaScript</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">Android SDK</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">Local Database</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">UI/UX
+                  Interactivity</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row gap-3">
+              <button onclick="openProjectModal('language')"
+                class="flex-1 py-3.5 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm rounded-xl transition duration-200 text-center flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(239,68,68,0.3)] hover:shadow-[0_0_28px_rgba(239,68,68,0.5)]">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Lihat Detail Lengkap</span>
+              </button>
+              <a href="https://github.com/reieieii/LinguaNova-Flutter" target="_blank" rel="noopener noreferrer"
+                class="flex-1 py-3.5 px-4 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-sm rounded-xl transition duration-200 text-center flex items-center justify-center gap-2 border border-zinc-700 hover:border-red-600">
+                <i class="fa-brands fa-github"></i>
+                <span>Repositori Github</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROYEK 3: Kalkulator Pintar -->
+        <div
+          class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-red-600/60 transition-all duration-300">
+
+          <!-- Card Header Image (Murni Foto Home Tanpa Teks/Ikon Penghalang) -->
+          <div class="relative h-56 sm:h-64 overflow-hidden border-b border-zinc-800 bg-zinc-950">
+            <img src="img/kalkulator-bg.png" alt="Kalkulator Pintar Preview"
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="p-6 sm:p-8 space-y-6 flex-grow flex flex-col justify-between">
+            <div class="space-y-4">
+              <!-- Category Badges -->
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-red-600/90 text-white shadow-sm">
+                  Web Application
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-zinc-900 border border-zinc-700 text-gray-300">
+                  Flutter Web
+                </span>
+              </div>
+
+              <h3 class="text-2xl font-bold text-white group-hover:text-red-500 transition">
+                Aplikasi Kalkulator Pintar
+              </h3>
+
+              <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                Aplikasi utilitas perhitungan yang dibangun menggunakan Flutter Web, dirancang agar dapat diakses secara
+                langsung dan responsif melalui peramban web dengan performa yang cepat dan antarmuka intuitif.
+              </p>
+
+              <!-- Fitur Utama -->
+              <div class="space-y-2 pt-1">
+                <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Fitur Unggulan:</div>
+                <ul class="text-xs sm:text-sm text-gray-300 space-y-1.5 list-none">
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>Aksesibilitas instan via browser web</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>Manajemen state dan logika perhitungan matematis yang akurat</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>Antarmuka pengguna (UI) yang responsif dan modern</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-red-400 font-medium">Flutter</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-red-400 font-medium">Dart</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">Web Tech</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">Responsive
+                  Design</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">State
+                  Management</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pt-6 border-t border-zinc-800/80 flex gap-3">
+              <button onclick="openProjectModal('kalkulator')"
+                class="flex-1 py-3.5 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm rounded-xl transition duration-200 text-center flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(239,68,68,0.3)] hover:shadow-[0_0_28px_rgba(239,68,68,0.5)]">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Lihat Detail Lengkap</span>
+              </button>
+              <a href="https://github.com/reieieii/Kalkulator-Pintar.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 py-3.5 px-4 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-sm rounded-xl transition duration-200 text-center flex items-center justify-center gap-2 border border-zinc-700 hover:border-zinc-500">
+                <i class="fa-brands fa-github"></i>
+                <span>Repositori GitHub</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROYEK 4: PT Pilar Solusi Gemilang -->
+        <div
+          class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-red-600/60 transition-all duration-300">
+
+          <!-- Card Header Image (Murni Foto Home Tanpa Teks/Ikon Penghalang) -->
+          <div class="relative h-56 sm:h-64 overflow-hidden border-b border-zinc-800 bg-zinc-950">
+            <img src="img/ptpsg-bg.png" alt="PT Pilar Solusi Gemilang Preview"
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+
+          <!-- Card Body -->
+          <div class="p-6 sm:p-8 flex flex-col flex-1 justify-between gap-6">
+            <div class="space-y-4">
+              <!-- Category Badges -->
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-red-600/90 text-white shadow-md">
+                  Pengalaman Magang / PT PSG
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium bg-zinc-900 border border-zinc-700 text-gray-300">
+                  WordPress & Company Profile
+                </span>
+              </div>
+
+              <h3 class="text-2xl font-bold text-white group-hover:text-red-500 transition">
+                Website PT Pilar Solusi Gemilang
+              </h3>
+
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Platform digital resmi perusahaan <strong class="text-white">property management</strong> dan
+                <strong class="text-white">acoustic soundproofing</strong> yang dikembangkan secara tim selama magang
+                untuk meningkatkan visibilitas digital dan kemudahan informasi klien.
+              </p>
+
+              <!-- Fitur Unggulan -->
+              <div class="space-y-2 pt-1">
+                <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Fitur Unggulan:</div>
+                <ul class="text-xs sm:text-sm text-gray-300 space-y-1.5 list-none">
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>Profil perusahaan &amp; layanan manajemen properti terpadu</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>Informasi spesialisasi solusi peredam suara (acoustic soundproofing)</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-red-500 text-xs"></i>
+                    <span>Desain responsif, modern, dan optimal di berbagai perangkat</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-blue-400 font-medium">WordPress</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-red-400 font-medium">Elementor</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">PHP</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">MySQL</span>
+                <span class="px-2.5 py-1 text-xs rounded-md bg-zinc-800 text-gray-300 font-medium">Responsive Design</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pt-6 border-t border-zinc-800/80 flex gap-3">
+              <button onclick="openProjectModal('psg')"
+                class="flex-1 py-3.5 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm rounded-xl transition duration-200 text-center flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(239,68,68,0.3)] hover:shadow-[0_0_28px_rgba(239,68,68,0.5)]">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Lihat Detail Lengkap</span>
+              </button>
+              <a href="https://www.pilarsolusigemilang.id/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 py-3.5 px-4 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-sm rounded-xl transition duration-200 text-center flex items-center justify-center gap-2 border border-zinc-700 hover:border-zinc-500">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span>Kunjungi Website</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tambahan Pengalaman Industri PT PSG -->
+      <div
+        class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border-zinc-800">
+        <div>
+          <div
+            class="inline-block px-2.5 py-0.5 rounded text-[11px] font-bold bg-emerald-950/80 text-emerald-400 border border-emerald-800 mb-1.5">
+            Pengalaman Magang Industri
+          </div>
+          <h4 class="text-xl font-bold text-white">Web Design, Web Developer & Admin Sosial Media di PT PSG</h4>
+          <p class="text-sm text-gray-400 mt-1">
+            Terlibat langsung dalam pemeliharaan web perusahaan serta manajemen komunikasi media sosial organisasi.
+          </p>
+        </div>
+        <button onclick="openCvModal()"
+          class="flex-shrink-0 px-6 py-3 rounded-lg bg-zinc-900 hover:bg-red-600 text-gray-200 hover:text-white border border-zinc-700 hover:border-red-600 transition duration-300 text-sm font-semibold flex items-center gap-2">
+          <span>Lihat di CV</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================================================== -->
+  <!-- 6. SECTION 5: CONTACT & FOOTER -->
+  <!-- =================================================== -->
+  <section id="contact" class="py-16 px-6 sm:px-10 lg:px-16 relative z-10 border-t border-zinc-800/60 bg-zinc-950/60">
+    <div class="max-w-6xl mx-auto space-y-10">
+
+      <!-- Section Title Header -->
+      <div class="text-center space-y-3">
+        <div
+          class="inline-flex items-center px-3.5 py-1 rounded-full bg-red-950/40 border border-red-600/30 text-red-400 text-xs font-semibold tracking-wider uppercase">
+          <span>Hubungi Saya</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+          Mari <span class="text-red-600">Terhubung</span>
+        </h2>
+        <div class="w-20 h-1.5 bg-red-600 rounded-full mx-auto mt-2"></div>
+        <p class="text-gray-400 max-w-2xl mx-auto text-base">
+          Tertarik berkolaborasi, mendiskusikan peluang proyek web, atau program magang? Silakan hubungi langsung
+          melalui saluran kontak di bawah.
+        </p>
+      </div>
+
+      <!-- Contact Container (Tampilan Terpusat & Rapi) -->
+      <div class="max-w-2xl mx-auto">
+        <div class="glass-card rounded-2xl p-7 sm:p-10 space-y-7 border-zinc-800 shadow-2xl">
+
+          <div class="space-y-1 border-b border-zinc-800 pb-5">
+            <h3 class="text-lg sm:text-xl font-bold text-white">
+              Informasi Kontak
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-400">
+              Silakan hubungi saya langsung untuk penawaran proyek, kolaborasi, atau program magang.
+            </p>
+          </div>
+
+          <!-- Telepon / WhatsApp -->
+          <div class="flex items-start gap-4 sm:gap-5 group">
+            <div
+              class="w-10 h-10 rounded-xl bg-red-600/10 border border-red-600/30 flex items-center justify-center text-red-500 text-lg flex-shrink-0 group-hover:bg-red-600 group-hover:text-white transition duration-300">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="space-y-1">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Telepon / WhatsApp</p>
+              <a href="https://wa.me/6288905778253" target="_blank" rel="noopener noreferrer"
+                class="text-base sm:text-lg font-bold text-white hover:text-red-500 transition block">
+                +62 889-0577-8253
+              </a>
+              <p class="text-xs text-emerald-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+                <span>Aktif dan Respon Cepat</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-start gap-4 sm:gap-5 group">
+            <div
+              class="w-10 h-10 rounded-xl bg-red-600/10 border border-red-600/30 flex items-center justify-center text-red-500 text-lg flex-shrink-0 group-hover:bg-red-600 group-hover:text-white transition duration-300">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="space-y-1">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Alamat Email</p>
+              <a href="mailto:revanadhityamaulana@gmail.com"
+                class="text-sm sm:text-base font-bold text-white hover:text-red-500 transition block break-all">
+                revanadhityamaulana@gmail.com
+              </a>
+              <p class="text-xs text-gray-400">Kirim email untuk penawaran resmi atau diskusi teknis</p>
+            </div>
+          </div>
+
+          <!-- Alamat -->
+          <div class="flex items-start gap-4 sm:gap-5 group">
+            <div
+              class="w-10 h-10 rounded-xl bg-red-600/10 border border-red-600/30 flex items-center justify-center text-red-500 text-lg flex-shrink-0 group-hover:bg-red-600 group-hover:text-white transition duration-300">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="space-y-1">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Lokasi / Alamat</p>
+              <p class="text-base font-bold text-white">
+                Jalan Ampera II no 38 Jakarta
+              </p>
+              <p class="text-xs text-gray-400">DKI Jakarta, Indonesia</p>
+            </div>
+          </div>
+
+          <!-- Tombol Aksi Langsung (WhatsApp & Email) -->
+          <div class="pt-5 border-t border-zinc-800">
+            <a href="https://wa.me/6288905778253?text=Halo%20Reivan,%20saya%20tertarik%20dengan%20portofolio%20Anda."
+              target="_blank" rel="noopener noreferrer"
+              class="w-full py-4 px-6 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_20px_rgba(16,185,129,0.25)]">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>Chat Langsung di WhatsApp</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================================================== -->
+  <!-- 7. FOOTER LENGKAP -->
+  <!-- =================================================== -->
+  <footer class="border-t border-zinc-800/80 bg-[#070709] py-12 px-6 sm:px-12 lg:px-20 relative z-10 text-gray-400">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+
+      <!-- Brand & Title -->
+      <div class="flex flex-col items-center md:items-start space-y-1">
+        <a href="#home" class="text-2xl font-black text-white tracking-tight">
+          Portfolio<span class="text-red-600">.</span>
+        </a>
+        <p class="text-xs text-gray-500">
+          Reivan Adhitya Maulana • Software Engineering & Web Developer
+        </p>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="flex flex-wrap justify-center gap-6 text-sm">
+        <a href="#home" class="hover:text-red-500 transition">Home</a>
+        <a href="#about" class="hover:text-red-500 transition">About</a>
+        <a href="#services" class="hover:text-red-500 transition">Services</a>
+        <a href="#portfolio" class="hover:text-red-500 transition">Portfolio</a>
+        <a href="#contact" class="hover:text-red-500 transition">Contact</a>
+      </div>
+
+      <!-- Social Media Small Icons -->
+      <div class="flex items-center space-x-3">
+        <a href="https://wa.me/6288905778253" target="_blank" rel="noopener noreferrer"
+          class="w-9 h-9 rounded-full bg-zinc-900 hover:bg-red-600 hover:text-white text-gray-400 flex items-center justify-center transition"
+          title="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:revanadhityamaulana@gmail.com"
+          class="w-9 h-9 rounded-full bg-zinc-900 hover:bg-red-600 hover:text-white text-gray-400 flex items-center justify-center transition"
+          title="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+          class="w-9 h-9 rounded-full bg-zinc-900 hover:bg-red-600 hover:text-white text-gray-400 flex items-center justify-center transition"
+          title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+          class="w-9 h-9 rounded-full bg-zinc-900 hover:bg-red-600 hover:text-white text-gray-400 flex items-center justify-center transition"
+          title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Copyright Requirement -->
+    <div class="max-w-7xl mx-auto border-t border-zinc-800/60 mt-8 pt-8 text-center text-xs text-gray-500">
+      © 2026 Reivan Adhitya Maulana. Portfolio LSP RPL.
+    </div>
+  </footer>
+
+  <!-- =================================================== -->
+  <!-- FLOATING ACTION: BACK TO TOP BUTTON -->
+  <!-- =================================================== -->
+  <button id="backToTopBtn" aria-label="Back to Top" onclick="scrollToTop()"
+    class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center text-lg shadow-[0_0_20px_rgba(239,68,68,0.5)] opacity-0 pointer-events-none transition-all duration-300 z-50 hover:bg-red-700 hover:scale-110">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- =================================================== -->
+  <!-- FLOATING INTERACTIVE TOAST NOTIFICATION -->
+  <!-- =================================================== -->
+  <div id="toastNotification"
+    class="fixed top-6 right-6 max-w-md w-full bg-zinc-900 border-l-4 border-l-emerald-500 border border-zinc-700 rounded-xl p-4 shadow-2xl z-50 transform translate-x-[150%] opacity-0 transition-all duration-400 pointer-events-none flex items-start gap-3">
+    <div
+      class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <div class="flex-grow">
+      <h4 id="toastTitle" class="text-sm font-bold text-white">Pesan Berhasil Terkirim!</h4>
+      <p id="toastMessage" class="text-xs text-gray-300 mt-1">Terima kasih atas pesan Anda. Reivan akan segera merespons
+        melalui email/WhatsApp.</p>
+    </div>
+    <button onclick="hideToast()" class="text-gray-400 hover:text-white text-sm">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <!-- =================================================== -->
+  <!-- MODAL 1: DETAIL PROYEK PORTOFOLIO -->
+  <!-- =================================================== -->
+  <div id="projectModal"
+    class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    <div
+      class="bg-zinc-900 border border-zinc-700 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 relative shadow-2xl text-left">
+
+      <button onclick="closeProjectModal()"
+        class="absolute top-5 right-5 w-9 h-9 rounded-full bg-zinc-800 text-gray-300 hover:text-white hover:bg-red-600 transition flex items-center justify-center">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="space-y-2 pr-8">
+        <div id="modalBadge" class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-red-600 text-white">
+          Kategori Proyek
+        </div>
+        <h3 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold text-white">
+          Judul Proyek
+        </h3>
+        <p id="modalSubtitle" class="text-sm text-red-400 font-medium">
+          Subjudul Proyek
+        </p>
+      </div>
+
+      <!-- Modal Body -->
+      <div id="modalContent" class="space-y-4 text-gray-300 text-sm leading-relaxed">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Modal Tech Stack -->
+      <div class="space-y-2">
+        <h5 class="text-xs font-bold uppercase tracking-wider text-gray-400">Teknologi Yang Digunakan:</h5>
+        <div id="modalTechTags" class="flex flex-wrap gap-2">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+
+      <!-- Modal Footer (Hanya Tombol Tutup) -->
+      <div class="pt-4 border-t border-zinc-800 flex justify-end">
+        <button onclick="closeProjectModal()"
+          class="px-6 py-2.5 rounded-lg bg-zinc-800 hover:bg-red-600 text-gray-200 hover:text-white text-sm font-semibold transition duration-200 flex items-center gap-2 border border-zinc-700 hover:border-red-600 shadow-md">
+          <i class="fa-solid fa-xmark"></i>
+          <span>Tutup</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =================================================== -->
+  <!-- MODAL 2: POP-UP CV (PREVIEW ONLY) -->
+  <!-- =================================================== -->
+  <div id="cvModal"
+    class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    <div
+      class="bg-zinc-950 border border-zinc-700 rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-y-auto p-6 sm:p-9 space-y-6 relative shadow-2xl text-left">
+
+      <!-- Close button (Hidden during print) -->
+      <button onclick="closeCvModal()"
+        class="no-print absolute top-5 right-5 w-9 h-9 rounded-full bg-zinc-800 text-gray-300 hover:text-white hover:bg-red-600 transition flex items-center justify-center">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <!-- CV Header -->
+      <div class="border-b border-zinc-800 pb-6 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+        <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-red-600 flex-shrink-0">
+          <img src="fotoreivan.jpg" alt="Reivan Adhitya" class="w-full h-full object-cover">
+        </div>
+        <div class="space-y-1 text-center sm:text-left">
+          <h3 class="text-2xl sm:text-3xl font-black text-white">REIVAN ADHITYA MAULANA</h3>
+          <p class="text-base font-bold text-red-500">Software Engineering & Web Developer</p>
+          <div class="text-xs text-gray-400 flex flex-wrap gap-x-4 gap-y-1 justify-center sm:justify-start pt-1">
+            <span><i class="fa-solid fa-envelope mr-1 text-red-500"></i> revanadhityamaulana@gmail.com</span>
+            <span><i class="fa-brands fa-whatsapp mr-1 text-red-500"></i> +62 889-0577-8253</span>
+            <span><i class="fa-solid fa-location-dot mr-1 text-red-500"></i> Jl. Ampera II no 38 Jakarta</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CV Section: Ringkasan Profil -->
+      <div class="space-y-2">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-red-500 border-b border-zinc-800 pb-1">
+          Ringkasan Profesional
+        </h4>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          Saya ingin menjadi seorang programmer yang percaya diri, antusias, dan kreatif. Saya ingin memperoleh lebih
+          banyak pengalaman di bidang media digital serta menciptakan situs web dan aplikasi saya sendiri. Berpengalaman
+          dalam pengembangan antarmuka web, pengelolaan konten digital, dan aplikasi lintas platform.
+        </p>
+      </div>
+
+      <!-- CV Section: Pendidikan -->
+      <div class="space-y-3">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-red-500 border-b border-zinc-800 pb-1">
+          Riwayat Pendidikan
+        </h4>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="font-bold text-white">SMKN 20 Jakarta</p>
+              <p class="text-xs text-gray-400">Rekayasa Perangkat Lunak (RPL) - Pemrograman Web & Aplikasi</p>
+            </div>
+            <span
+              class="text-xs font-semibold text-red-400 bg-red-950/40 px-2 py-0.5 rounded border border-red-900/60">2024
+              - 2027</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="font-bold text-white">SMPN 56 Jakarta</p>
+              <p class="text-xs text-gray-400">Pendidikan Menengah Pertama</p>
+            </div>
+            <span class="text-xs text-gray-400">2021 - 2024</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="font-bold text-white">SDN Ragunan 07 Pagi</p>
+              <p class="text-xs text-gray-400">Pendidikan Dasar</p>
+            </div>
+            <span class="text-xs text-gray-400">2015 - 2021</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CV Section: Pengalaman Nyata -->
+      <div class="space-y-3">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-red-500 border-b border-zinc-800 pb-1">
+          Pengalaman Kerja & Organisasi
+        </h4>
+        <div class="space-y-2 text-sm text-gray-300">
+          <div>
+            <div class="flex justify-between items-center">
+              <p class="font-bold text-white">Web Design & Web Developer (Magang)</p>
+              <span class="text-xs text-red-400 font-medium">PT PSG</span>
+            </div>
+            <p class="text-xs text-gray-400 mt-0.5">
+              Merancang antarmuka web, mendukung pemeliharaan situs perusahaan, dan berkoordinasi dalam implementasi
+              fitur digital.
+            </p>
+          </div>
+          <div class="pt-2">
+            <div class="flex justify-between items-center">
+              <p class="font-bold text-white">Admin Media Sosial</p>
+              <span class="text-xs text-gray-400 font-medium">Organisasi & PT PSG</span>
+            </div>
+            <p class="text-xs text-gray-400 mt-0.5">
+              Mengelola publikasi konten media digital, branding visual, dan berinteraksi dengan audiens komunitas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CV Section: Proyek Portofolio -->
+      <div class="space-y-3">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-red-500 border-b border-zinc-800 pb-1">
+          Proyek Unggulan
+        </h4>
+        <div class="space-y-2 text-sm text-gray-300">
+          <div>
+            <p class="font-bold text-white">Web Kantin Digital</p>
+            <p class="text-xs text-gray-400">Sistem pemesanan makanan dan manajemen stand kantin sekolah berbasis web
+              (Laravel & MySQL).</p>
+          </div>
+          <div>
+            <p class="font-bold text-white">Aplikasi Language Learning</p>
+            <p class="text-xs text-gray-400">Aplikasi interaktif lintas platform yang dirancang untuk platform Android
+              dan sistem operasi Windows.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CV Section: Keahlian Teknis -->
+      <div class="space-y-2">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-red-500 border-b border-zinc-800 pb-1">
+          Keahlian Teknis & Alat
+        </h4>
+        <div class="flex flex-wrap gap-1.5 text-xs">
+          <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-gray-200">HTML5</span>
+          <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-gray-200">CSS3 / Tailwind</span>
+          <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-gray-200">JavaScript</span>
+          <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-gray-200">PHP & MySQL</span>
+          <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-gray-200">Cross-Platform Dev</span>
+          <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-gray-200">Web Design</span>
+          <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-gray-200">Git & GitHub</span>
+        </div>
+      </div>
+
+      <!-- Modal Footer (Tombol Tutup Saja Tanpa Download / Print) -->
+      <div class="pt-5 border-t border-zinc-800 flex flex-wrap items-center justify-between gap-3">
+        <p class="text-xs text-gray-500 flex items-center gap-1.5">
+          <i class="fa-solid fa-circle-info text-red-500"></i>
+          <span>Curriculum Vitae • Reivan Adhitya Maulana</span>
+        </p>
+        <button onclick="closeCvModal()"
+          class="px-6 py-2.5 rounded-lg bg-zinc-800 hover:bg-red-600 text-gray-200 hover:text-white text-sm font-semibold transition duration-200 flex items-center gap-2 border border-zinc-700 hover:border-red-600 shadow-md">
+          <i class="fa-solid fa-xmark"></i>
+          <span>Tutup</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
